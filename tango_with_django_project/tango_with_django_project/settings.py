@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    
+
 ]
 
 STATICFILES_DIRS = [STATIC_DIR,]
