@@ -24,6 +24,7 @@ class PageForm(forms.ModelForm):
     
     views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
+
     class Meta:
         # Provide an association between the ModelForm and a model
         model = Page
@@ -36,3 +37,13 @@ class PageForm(forms.ModelForm):
         exclude = ('category',)
         # or specify the fields to include (don't include the category field).
         #fields = ('title', 'url', 'views')
+
+    
+    def clean(self):
+        cleaned_data =  self.cleaned_data
+        url = cleaned_data.get('url')
+        
+        if url and not url.startswith('http://'):
+            url = f'http://{url}'
+            cleaned_data['url'] = url
+        return cleaned_data
