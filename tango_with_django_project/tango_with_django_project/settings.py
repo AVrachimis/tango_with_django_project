@@ -30,6 +30,8 @@ MEDIA_URL = '/media/'
 
 STATIC_URL = '/static/'
 
+LOGIN_URL = 'rango:login'
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
