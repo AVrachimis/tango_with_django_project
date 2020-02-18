@@ -121,6 +121,9 @@ def add_page(request, category_name_slug):
     context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context=context_dict)
 
+
+
+"""
 def register(request):
     # A boolean value for telling the template
     # whether the registration was successful.
@@ -221,7 +224,7 @@ def user_login(request):
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
         return render(request, 'rango/login.html')
-
+"""
 
 def some_view(request):
     if not request.user.is_authenticated():
@@ -235,13 +238,15 @@ def restricted(request):
 
         return render(request, 'rango/restricted.html', context=context_dict)
 
+
+"""
 @login_required
 def user_logout(request):
     #Since we know the user is logged in, we can now just log out
     logout(request)
     #take the user back to the homepage
     return redirect(reverse('rango:index'))
-
+"""
 
 
 
